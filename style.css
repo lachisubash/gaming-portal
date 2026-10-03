@@ -1,0 +1,397 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+
+/* HEADER */
+
+header {
+    background: #111827;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.auth-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.auth-button {
+    padding: 9px 14px;
+    font-size: 14px;
+}
+
+.auth-button.secondary {
+    background: transparent;
+    border: 1px solid #38bdf8;
+}
+
+.auth-button.secondary:hover {
+    background: #0ea5e9;
+}
+
+.welcome-user {
+    color: #bae6fd;
+    font-size: 14px;
+}
+
+.modal[hidden] {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: rgba(2, 6, 23, 0.78);
+    z-index: 2000;
+}
+
+.modal-card {
+    position: relative;
+    width: min(100%, 420px);
+    padding: 32px;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
+.modal-card h2 {
+    margin-bottom: 8px;
+}
+
+.auth-message {
+    min-height: 22px;
+    margin-bottom: 18px;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.close-button {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    padding: 2px 8px;
+    background: transparent;
+    color: #cbd5e1;
+    font-size: 26px;
+}
+
+.close-button:hover {
+    background: #334155;
+}
+
+.modal-card label {
+    display: block;
+    margin: 14px 0 7px;
+}
+
+.modal-card input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.modal-card form button[type="submit"] {
+    width: 100%;
+    margin-top: 22px;
+}
+
+.switch-button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 8px;
+    background: transparent;
+    color: #7dd3fc;
+    font-size: 14px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(15, 23, 42, 0.8),
+            rgba(15, 23, 42, 0.9)
+        );
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #cbd5e1;
+}
+
+.btn,
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 7px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.btn:hover,
+button:hover {
+    background: #1d4ed8;
+}
+
+
+/* DASHBOARD */
+
+.dashboard {
+    display: grid;
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    width: 85%;
+    margin: 40px auto;
+}
+
+.stat-card {
+    background: #1e293b;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.stat-card h2 {
+    font-size: 35px;
+    color: #38bdf8;
+}
+
+
+/* SECTION */
+
+.section {
+    width: 85%;
+    margin: 60px auto;
+}
+
+.section > h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+
+/* SEARCH */
+
+#searchTournament {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 30px;
+
+    border-radius: 7px;
+    border: none;
+
+    font-size: 16px;
+}
+
+
+/* TOURNAMENT GRID */
+
+.tournament-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+}
+
+
+/* TOURNAMENT CARD */
+
+.tournament-card {
+    background: #1e293b;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tournament-card h3 {
+    color: #38bdf8;
+    margin-bottom: 15px;
+}
+
+.tournament-card p {
+    margin: 10px 0;
+    color: #cbd5e1;
+}
+
+.tournament-card button {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.delete {
+    background: #dc2626;
+}
+
+.delete:hover {
+    background: #b91c1c;
+}
+
+
+/* FORM */
+
+.form-card {
+    background: #1e293b;
+
+    max-width: 600px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    border-radius: 10px;
+}
+
+.form-card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-card label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 7px;
+}
+
+.form-card input,
+.form-card select {
+    width: 100%;
+
+    padding: 13px;
+
+    border-radius: 6px;
+
+    border: none;
+
+    font-size: 15px;
+}
+
+.form-card button {
+    width: 100%;
+    margin-top: 25px;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    background: #020617;
+
+    padding: 30px;
+
+    margin-top: 50px;
+}
+
+footer p {
+    margin-top: 10px;
+    color: #94a3b8;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 8px;
+    }
+
+    .auth-area {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        width: 92%;
+    }
+}
+
+#appShell[hidden] {
+    display: none;
+}

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gaming Tournament Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="authModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="authTitle" hidden>
+    <div class="modal-card">
+        <button id="closeAuthButton" class="close-button" type="button" aria-label="Close">&times;</button>
+        <h2 id="authTitle">Log in</h2>
+        <p id="authMessage" class="auth-message">Use your saved GameArena account.</p>
+
+        <form id="authForm">
+            <div id="nameField" hidden>
+                <label for="accountName">Name</label>
+                <input id="accountName" type="text" autocomplete="name" placeholder="Enter your name">
+            </div>
+
+            <label for="accountEmail">Email</label>
+            <input id="accountEmail" type="email" autocomplete="email" placeholder="Enter your email" required>
+
+            <label for="accountPassword">Password</label>
+            <input id="accountPassword" type="password" autocomplete="current-password" placeholder="Enter your password" minlength="6" required>
+
+            <button id="authSubmitButton" type="submit">Log in</button>
+        </form>
+
+        <button id="authSwitchButton" class="switch-button" type="button">Need an account? Create one</button>
+    </div>
+</div>
+
+<div id="appShell" hidden>
+
+<header>
+    <div class="logo">🎮 GameArena</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#tournaments">Tournaments</a>
+        <a href="#create">Create</a>
+        <a href="#players">Players</a>
+    </nav>
+
+    <div id="authArea" class="auth-area"></div>
+</header>
+
+<!-- HOME -->
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <h1>Gaming Tournament Portal</h1>
+
+        <p>
+            Join tournaments, compete with players
+            and become the champion.
+        </p>
+
+        <a href="#tournaments" class="btn">
+            Explore Tournaments
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- DASHBOARD -->
+
+<section class="dashboard">
+
+    <div class="stat-card">
+        <h2 id="totalTournaments">0</h2>
+        <p>Total Tournaments</p>
+    </div>
+
+    <div class="stat-card">
+        <h2 id="totalPlayers">0</h2>
+        <p>Registered Players</p>
+    </div>
+
+    <div class="stat-card">
+        <h2 id="totalRegistrations">0</h2>
+        <p>Tournament Registrations</p>
+    </div>
+
+</section>
+
+
+<!-- TOURNAMENTS -->
+
+<section id="tournaments" class="section">
+
+    <h2>Available Tournaments</h2>
+
+    <input
+        type="text"
+        id="searchTournament"
+        placeholder="🔍 Search tournament..."
+    >
+
+    <div id="tournamentList" class="tournament-grid"></div>
+
+</section>
+
+
+<!-- CREATE TOURNAMENT -->
+
+<section id="create" class="section">
+
+    <div class="form-card">
+
+        <h2>Create Tournament</h2>
+
+        <form id="tournamentForm">
+
+            <label>Tournament Name</label>
+
+            <input
+                type="text"
+                id="tournamentName"
+                placeholder="Enter tournament name"
+                required
+            >
+
+            <label>Game</label>
+
+            <select id="game" required>
+
+                <option value="">
+                    Select Game
+                </option>
+
+                <option value="BGMI">
+                    BGMI
+                </option>
+
+                <option value="Free Fire">
+                    Free Fire
+                </option>
+
+                <option value="Valorant">
+                    Valorant
+                </option>
+
+                <option value="CS2">
+                    Counter Strike 2
+                </option>
+
+                <option value="FIFA">
+                    FIFA
+                </option>
+
+            </select>
+
+            <label>Date</label>
+
+            <input
+                type="date"
+                id="date"
+                required
+            >
+
+            <label>Maximum Players</label>
+
+            <input
+                type="number"
+                id="maxPlayers"
+                min="2"
+                placeholder="Maximum players"
+                required
+            >
+
+            <label>Prize Pool</label>
+
+            <input
+                type="number"
+                id="prize"
+                placeholder="Prize amount"
+                required
+            >
+
+            <button type="submit">
+                Create Tournament
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- PLAYERS -->
+
+<section id="players" class="section">
+
+    <div class="form-card">
+
+        <h2>Player Registration</h2>
+
+        <form id="playerForm">
+
+            <label>Player Name</label>
+
+            <input
+                type="text"
+                id="playerName"
+                placeholder="Enter player name"
+                required
+            >
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                id="playerEmail"
+                placeholder="Enter email"
+                required
+            >
+
+            <label>Game ID</label>
+
+            <input
+                type="text"
+                id="gameId"
+                placeholder="Enter game ID"
+                required
+            >
+
+            <button type="submit">
+                Register Player
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>🎮 GameArena</h3>
+
+    <p>
+        Gaming Tournament Portal
+    </p>
+
+    <p>
+        © 2026 GameArena
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</div>
+
+</body>
+</html>
